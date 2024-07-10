@@ -4,7 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Passionist Sisters' School</title>
+
+        <link rel="icon" href="{{ URL('images/pss_logo.jpeg') }}" type="image/jpeg">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -15,22 +17,19 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="h-screen w-full sm:w-auto">
-        <header class="px-6 py-4 relative shadow-lg">
+    <body class="h-screen w-full sm:w-auto flex flex-col">
+        <header class="px-6 py-4 relative shadow-lg mb-auto">
             <nav class="flex items-center justify-between">
                     <a class="flex items-center gap-4" href="{{ route('home.index') }}">
                         <img width="50" src="{{ URL('images/pss_logo.jpeg') }}" alt="Passionist Sisters' School">
-                        <h1 class="text-3xl hidden sm:block">Passionist Sisters' School</h1>
+                        <h1 class="text-3xl hidden md:flex">Passionist Sisters' School</h1>
                     </a>
                     {{-- Desktop Menu --}}
                     <div class="hidden sm:flex items-center gap-4 uppercase font-medium">
                         <a href="#" class="rounded-lg hover:text-lime-600">Appointment</a>
                         <a href="#" class="rounded-lg hover:text-lime-600">Blog</a>
                         <a href="#" class="rounded-lg hover:text-lime-600">About</a>
-                        <form action="" method="post">
-                            @csrf
-                            <button class="p-2 bg-blue-500 uppercase rounded-lg w-full hover:bg-blue-300">Login</button>
-                        </form>
+                        <a href="{{ route('login.index') }}" class="p-2 bg-blue-500 uppercase rounded-lg w-full hover:bg-blue-300">Login</a>
                     </div>
                     {{-- Mobile Menu --}}
                     <div class="sm:hidden" x-data="{ open: false }">
@@ -42,10 +41,7 @@
                             <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">Appointment</a>
                             <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">Blog</a>
                             <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">About</a>
-                            <form action="" method="post">
-                                @csrf
-                                <button class="p-2 bg-blue-500 uppercase rounded-lg w-full hover:bg-blue-300">Login</button>
-                            </form>
+                            <a href="{{ route('login.index') }}" class="p-2 bg-blue-500 uppercase rounded-lg w-full hover:bg-blue-300">Login</a>
                         </div>
                     </div>
             </nav>
@@ -53,8 +49,8 @@
         <main>
             {{ $slot }}
         </main>
-        <footer>
-
+        <footer class="mt-auto bg-white p-5 text-center border border-slate-300">
+            <p>Copyright Passionist Sisters' School</p>
         </footer>
     </body>
 </html>
