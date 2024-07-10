@@ -17,19 +17,23 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="h-screen w-full sm:w-auto flex flex-col">
-        <header class="px-6 py-4 relative shadow-lg mb-auto">
+    <body class="h-screen w-full flex flex-col sm:w-auto">
+        <header class="px-6 py-4 relative shadow-lg">
             <nav class="flex items-center justify-between">
                     <a class="flex items-center gap-4" href="{{ route('home.index') }}">
                         <img width="50" src="{{ URL('images/pss_logo.jpeg') }}" alt="Passionist Sisters' School">
                         <h1 class="text-3xl hidden md:flex">Passionist Sisters' School</h1>
                     </a>
+                    @auth
                     {{-- Desktop Menu --}}
                     <div class="hidden sm:flex items-center gap-4 uppercase font-medium">
                         <a href="#" class="rounded-lg hover:text-lime-600">Appointment</a>
                         <a href="#" class="rounded-lg hover:text-lime-600">Blog</a>
                         <a href="#" class="rounded-lg hover:text-lime-600">About</a>
-                        <a href="{{ route('login.index') }}" class="p-2 bg-blue-500 uppercase rounded-lg w-full hover:bg-blue-300">Login</a>
+                        <form action="{{ route('auth.logout') }}" method="post">
+                            @csrf
+                            <button class="p-2 bg-blue-500 uppercase rounded-lg w-full text-white hover:bg-blue-300">Logout</button>
+                        </form>
                     </div>
                     {{-- Mobile Menu --}}
                     <div class="sm:hidden" x-data="{ open: false }">
@@ -41,13 +45,41 @@
                             <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">Appointment</a>
                             <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">Blog</a>
                             <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">About</a>
-                            <a href="{{ route('login.index') }}" class="p-2 bg-blue-500 uppercase rounded-lg w-full hover:bg-blue-300">Login</a>
+                            <form action="{{ route('auth.logout') }}" method="post">
+                                @csrf
+                                <button class="p-2 bg-blue-500 uppercase rounded-lg w-full text-white hover:bg-blue-300">Logout</button>
+                            </form>
                         </div>
                     </div>
+                    @endauth
+                    @guest
+                    {{-- Desktop Menu --}}
+                    <div class="hidden sm:flex items-center gap-4 uppercase font-medium">
+                        <a href="#" class="rounded-lg hover:text-lime-600">Appointment</a>
+                        <a href="#" class="rounded-lg hover:text-lime-600">Blog</a>
+                        <a href="#" class="rounded-lg hover:text-lime-600">About</a>
+                        <a href="{{ route('login.index') }}" class="p-2 bg-blue-500 uppercase rounded-lg w-full text-white hover:bg-blue-300">Login</a>
+                    </div>
+                    {{-- Mobile Menu --}}
+                    <div class="sm:hidden" x-data="{ open: false }">
+                        <button @click="open = !open"><i class="fa-solid fa-bars"></i></button>
+                        <div class="mobile-menu-list" x-show="open" @click.outside="open = false">
+                            <button class="text-right" x-show="open" @click="open = !open">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">Appointment</a>
+                            <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">Blog</a>
+                            <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">About</a>
+                            <a href="{{ route('login.index') }}" class="p-2 bg-blue-500 uppercase rounded-lg w-full text-white hover:bg-blue-300">Login</a>
+                        </div>
+                    </div>
+                    @endguest
             </nav>
         </header>
         <main>
-            {{ $slot }}
+            <div class="flex flex-col py-20">
+                {{ $slot }}
+            </div>
         </main>
         <footer class="mt-auto bg-white p-5 text-center border border-slate-300">
             <p>Copyright Passionist Sisters' School</p>

@@ -15,7 +15,13 @@ class LoginController extends Controller
         //Logic for login
         $fields = $request->validate([
             'email' => 'required|email',
-            'password' => 'required|min:8',
+            'password' => 'required',
         ]);
+
+        if(Auth::attempt($fields, $request->remember)){
+            return redirect()->route('home.index');
+        } else {
+            return back()->withErrors(['failed' => 'Invalid credentials']);
+        }
     }
 }
