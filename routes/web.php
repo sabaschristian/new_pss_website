@@ -8,10 +8,14 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
-Route::get('/login', [LoginController::class, 'index'])->name('login.index');
-Route::post('/login', [LoginController::class, 'login'])->name('login.login');
+Route::middleware('auth')->group(function (){
+    Route::post('/logout', [LogoutController::class, 'logout'])->name('auth.logout');
+});
 
-Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
-Route::post('/register', [RegisterController::class, 'register'])->name('register.register');
+Route::middleware('guest')->group(function (){
+    Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+    Route::post('/login', [LoginController::class, 'login'])->name('login.login');
 
-Route::post('/logout', [LogoutController::class, 'logout'])->name('auth.logout');
+    Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
+    Route::post('/register', [RegisterController::class, 'register'])->name('register.register');
+});
