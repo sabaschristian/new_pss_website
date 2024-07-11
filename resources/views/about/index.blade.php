@@ -2,8 +2,8 @@
     <section class="bg-lime-400 w-full h-[150px] flex flex-col items-center justify-center">
             <h1 class="text-3xl uppercase font-medium text-center">About</h1>
     </section>
-    <section class="p-4 mt-5 sm:px-4 sm:py-8">
-        <h1 class="text-2xl font-medium text-center">Biography of the Foundress</h1>
+    <section class="p-4 sm:px-8 sm:py-4 mt-10">
+        <h1 class="text-2xl font-medium text-center">BIOGRAPHY of the FOUNDRESS</h1>
         <div class="flex flex-col mt-10 max-w-screen-2xl mx-auto">
             <div class="p-2 mx-auto flex flex-col items-center sm:grid sm:grid-cols-2">
                 <div class="flex items-center justify-center">
