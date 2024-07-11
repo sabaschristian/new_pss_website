@@ -9,8 +9,9 @@
         <link rel="icon" href="{{ URL('images/pss_logo.jpeg') }}" type="image/jpeg">
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
         <script src="https://kit.fontawesome.com/aa5e707bac.js" crossorigin="anonymous"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -27,9 +28,9 @@
                     @auth
                     {{-- Desktop Menu --}}
                     <div class="hidden sm:flex items-center gap-4 uppercase font-medium">
-                        <a href="#" class="rounded-lg hover:text-lime-600">Appointment</a>
-                        <a href="#" class="rounded-lg hover:text-lime-600">Blog</a>
-                        <a href="#" class="rounded-lg hover:text-lime-600">About</a>
+                        <a href="{{route('appointment.index')}}" class="rounded-lg hover:text-lime-600">Appointment</a>
+                        <a href="{{route('blog.index')}}" class="rounded-lg hover:text-lime-600">Blog</a>
+                        <a href="{{route('about.index')}}" class="rounded-lg hover:text-lime-600">About</a>
                         <form action="{{ route('auth.logout') }}" method="post">
                             @csrf
                             <button class="p-2 bg-blue-500 uppercase rounded-lg w-full text-white hover:bg-blue-300">Logout</button>
@@ -42,9 +43,9 @@
                             <button class="text-right" x-show="open" @click="open = !open">
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
-                            <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">Appointment</a>
-                            <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">Blog</a>
-                            <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">About</a>
+                            <a href="{{route('appointment.index')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">Appointment</a>
+                            <a href="{{route('blog.index')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">Blog</a>
+                            <a href="{{route('about.index')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">About</a>
                             <form action="{{ route('auth.logout') }}" method="post">
                                 @csrf
                                 <button class="p-2 bg-blue-500 uppercase rounded-lg w-full text-white hover:bg-blue-300">Logout</button>
@@ -55,9 +56,9 @@
                     @guest
                     {{-- Desktop Menu --}}
                     <div class="hidden sm:flex items-center gap-4 uppercase font-medium">
-                        <a href="#" class="rounded-lg hover:text-lime-600">Appointment</a>
-                        <a href="#" class="rounded-lg hover:text-lime-600">Blog</a>
-                        <a href="#" class="rounded-lg hover:text-lime-600">About</a>
+                        <a href="{{route('appointment.index')}}" class="rounded-lg hover:text-lime-600">Appointment</a>
+                        <a href="{{route('blog.index')}}" class="rounded-lg hover:text-lime-600">Blog</a>
+                        <a href="{{route('about.index')}}" class="rounded-lg hover:text-lime-600">About</a>
                         <a href="{{ route('login.index') }}" class="p-2 bg-blue-500 uppercase rounded-lg w-full text-white hover:bg-blue-300">Login</a>
                     </div>
                     {{-- Mobile Menu --}}
@@ -67,9 +68,9 @@
                             <button class="text-right" x-show="open" @click="open = !open">
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
-                            <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">Appointment</a>
-                            <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">Blog</a>
-                            <a href="#" class="px-4 py-2 rounded-lg hover:bg-lime-300">About</a>
+                            <a href="{{route('appointment.index')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">Appointment</a>
+                            <a href="{{route('blog.index')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">Blog</a>
+                            <a href="{{route('about.index')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">About</a>
                             <a href="{{ route('login.index') }}" class="p-2 bg-blue-500 uppercase rounded-lg w-full text-white hover:bg-blue-300">Login</a>
                         </div>
                     </div>
@@ -77,7 +78,7 @@
             </nav>
         </header>
         <main>
-            <div class="flex flex-col py-20">
+            <div>
                 {{ $slot }}
             </div>
         </main>

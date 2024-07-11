@@ -18,4 +18,8 @@ Route::middleware('guest')->group(function (){
 
     Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
     Route::post('/register', [RegisterController::class, 'register'])->name('register.register');
+
+    Route::view('/appointment', 'appointment.index')->name('appointment.index');
+    Route::view('/blog', 'blog.index')->name('blog.index');
+    Route::view('/about', 'about.index')->name('about.index');
 });

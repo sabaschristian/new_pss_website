@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="max-w-sm sm:max-w-lg w-full mx-auto mt-auto min-h-full bg-white border border-gray-300 shadow-sm rounded-lg">
+    <div class="max-w-sm sm:max-w-lg w-full mx-auto my-10 min-h-full bg-white border border-gray-300 shadow-sm rounded-lg">
         <div class="px-6 py-12">
             <a href="{{ route('home.index') }}" class="flex justify-center">
                 <img src="{{ URL('images/pss_logo.jpeg') }}" alt=" Passionist Sisters' School" width="50">
