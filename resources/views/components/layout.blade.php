@@ -28,7 +28,7 @@
                     @auth
                     {{-- Desktop Menu --}}
                     <div class="hidden sm:flex items-center gap-4 uppercase font-medium">
-                        <a href="{{route('appointment.index')}}" class="rounded-lg hover:text-lime-600">Appointment</a>
+                        <a href="{{route('appointment')}}" class="rounded-lg hover:text-lime-600">Appointment</a>
                         <a href="{{route('blog.index')}}" class="rounded-lg hover:text-lime-600">Blog</a>
                         <a href="{{route('about.index')}}" class="rounded-lg hover:text-lime-600">About</a>
                         <form action="{{ route('auth.logout') }}" method="post">
@@ -43,7 +43,7 @@
                             <button class="text-right" x-show="open" @click="open = !open">
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
-                            <a href="{{route('appointment.index')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">Appointment</a>
+                            <a href="{{route('appointment')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">Appointment</a>
                             <a href="{{route('blog.index')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">Blog</a>
                             <a href="{{route('about.index')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">About</a>
                             <form action="{{ route('auth.logout') }}" method="post">
@@ -56,10 +56,10 @@
                     @guest
                     {{-- Desktop Menu --}}
                     <div class="hidden sm:flex items-center gap-4 uppercase font-medium">
-                        <a href="{{route('appointment.index')}}" class="rounded-lg hover:text-lime-600">Appointment</a>
+                        <a href="{{route('appointment')}}" class="rounded-lg hover:text-lime-600">Appointment</a>
                         <a href="{{route('blog.index')}}" class="rounded-lg hover:text-lime-600">Blog</a>
                         <a href="{{route('about.index')}}" class="rounded-lg hover:text-lime-600">About</a>
-                        <a href="{{ route('login.index') }}" class="p-2 bg-blue-500 uppercase rounded-lg w-full text-white hover:bg-blue-300">Login</a>
+                        <a href="{{ route('login') }}" class="p-2 bg-blue-500 uppercase rounded-lg w-full text-white hover:bg-blue-300">Login</a>
                     </div>
                     {{-- Mobile Menu --}}
                     <div class="sm:hidden" x-data="{ open: false }">
@@ -68,10 +68,10 @@
                             <button class="text-right" x-show="open" @click="open = !open">
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
-                            <a href="{{route('appointment.index')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">Appointment</a>
+                            <a href="{{route('appointment')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">Appointment</a>
                             <a href="{{route('blog.index')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">Blog</a>
                             <a href="{{route('about.index')}}" class="px-4 py-2 rounded-lg hover:bg-lime-300">About</a>
-                            <a href="{{ route('login.index') }}" class="p-2 bg-blue-500 uppercase rounded-lg w-full text-white hover:bg-blue-300">Login</a>
+                            <a href="{{ route('login') }}" class="p-2 bg-blue-500 uppercase rounded-lg w-full text-white hover:bg-blue-300">Login</a>
                         </div>
                     </div>
                     @endguest
@@ -83,7 +83,7 @@
             </div>
         </main>
         <footer class="mt-auto bg-white p-5 text-center border border-slate-300">
-            <p>Copyright Passionist Sisters' School</p>
+            <p>Copyright © 2024 Passionist Sisters' School</p>
         </footer>
     </body>
 </html>

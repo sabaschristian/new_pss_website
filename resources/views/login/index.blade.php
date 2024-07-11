@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="mt-20 max-w-sm sm:max-w-lg w-full mx-auto min-h-full bg-white border border-gray-300 shadow-sm rounded-lg">
+    <div class="mt-20 max-w-sm sm:max-w-lg w-full mx-auto min-h-full bg-white border border-gray-300 shadow-lg rounded-lg">
         <div class="px-6 py-12">
             <a href="{{ route('home.index') }}" class="flex justify-center">
                 <img src="{{ URL('images/pss_logo.jpeg') }}" alt=" Passionist Sisters' School" width="50">
@@ -30,7 +30,7 @@
                     <label for="remember">Remember me</label>
                 </div>
                 <div class="flex justify-end">
-                    <p>Don't have an account? <a href="{{ route('register.index') }}" class="underline decoration-lime-500 text-lime-500">Sign up here.</a></p>
+                    <p>Don't have an account? <a href="{{ route('register') }}" class="underline decoration-lime-500 text-lime-500">Sign up here.</a></p>
                 </div>
                 <div class="">
                     <button class="p-2 bg-blue-500 uppercase rounded-lg w-full font-medium text-white hover:bg-blue-400">Login</button>

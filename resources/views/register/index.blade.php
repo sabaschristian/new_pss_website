@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="max-w-sm sm:max-w-lg w-full mx-auto my-10 min-h-full bg-white border border-gray-300 shadow-sm rounded-lg">
+    <div class="max-w-sm sm:max-w-lg w-full mx-auto my-10 min-h-full bg-white border border-gray-300 shadow-lg rounded-lg">
         <div class="px-6 py-12">
             <a href="{{ route('home.index') }}" class="flex justify-center">
                 <img src="{{ URL('images/pss_logo.jpeg') }}" alt=" Passionist Sisters' School" width="50">
@@ -34,7 +34,7 @@
                     <input type="password" name="password_confirmation" id="password_confirmation" class="w-full border border-slate-500 rounded-md p-2 shadow-sm focus:outline-none @error('password') ring-1 ring-red-500 @enderror">
                 </div>
                 <div class="flex justify-end">
-                    <p>Already have an account? <a href="{{ route('login.index') }}" class="underline decoration-lime-500 text-lime-500">Sign in here.</a></p>
+                    <p>Already have an account? <a href="{{ route('login') }}" class="underline decoration-lime-500 text-lime-500">Sign in here.</a></p>
                 </div>
                 <div class="">
                     <button class="p-2 bg-blue-500 uppercase rounded-lg w-full font-medium text-white hover:bg-blue-400">Register</button>

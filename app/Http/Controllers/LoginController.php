@@ -19,7 +19,7 @@ class LoginController extends Controller
         ]);
 
         if(Auth::attempt($fields, $request->remember)){
-            return redirect()->route('home.index');
+            return redirect()->route('appointment');
         } else {
             return back()->withErrors(['failed' => 'Invalid credentials']);
         }
