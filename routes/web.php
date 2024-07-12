@@ -12,11 +12,14 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::view('/blog', 'blog.index')->name('blog.index');
 Route::view('/about', 'about.index')->name('about.index');
 
+Route::resource('appointments', AppointmentController::class);
+
 // Auth
 Route::middleware('auth')->group(function (){
 
     Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment');
     Route::post('/appointment', [AppointmentController::class, 'store'])->name('appointment.store');
+    Route::get('/appointment/success/{id}', [AppointmentController::class, 'show'])->name('appointment.show');
     
     Route::post('/logout', [LogoutController::class, 'logout'])->name('auth.logout');
 });

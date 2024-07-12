@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Expr\Cast\String_;
 
 class AppointmentController extends Controller
 {
@@ -31,19 +33,21 @@ class AppointmentController extends Controller
             'appointment_date' => 'required|date',
         ]);
 
-        $fields['user_id'] = Auth::id();
-
-        Appointment::create($fields);
+        $appointment = Appointment::create(['user_id' => Auth::id(), ...$fields]);
         
-        return back()->withErrors(['success' => 'Appointment created successfully']);
+        return redirect()->route('appointment.show', ['id' => $appointment->id])->with('success', 'Appointment created successfully.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $latest_appointment = Appointment::latest('id')->first();
+
+        // // $appointments = Auth::user()->appointments;
+
+        return view('appointment.show', ['appointments' => $latest_appointment]);
     }
 
     /**

@@ -1,9 +1,6 @@
 <x-layout>
     <div class="max-w-md sm:max-w-4xl w-full mx-auto my-16 min-h-full bg-white border border-gray-300 shadow-sm rounded-lg">
         <div class="px-4 py-2 sm:py-8">
-            @error('success')
-                <p class="text-green-500">{{ $message }}</p>
-            @enderror
             <form action="{{ route('appointment.store') }}" method="post" class="space-y-8">
                 @csrf
                 <h1 class="text-3xl font-medium">Appointment Form</h1>
@@ -39,9 +36,9 @@
                     <label for="appointments" class="font-medium">Appointment:</label>
                     <select name="appointments" id="appointments" class="py-2 focus:outline-none">
                         <option value="default">Select an appointment</option>
-                        <option value="pay">Pay in Cashier</option>
-                        <option value="inquire">Inquire</option>
-                        <option value="meeting">Meeting</option>
+                        <option value="Pay in Cashier">Pay in Cashier</option>
+                        <option value="Inquire">Inquire</option>
+                        <option value="Meeting">Meeting</option>
                     </select>
                 </div>
                 <div class="flex flex-col">
