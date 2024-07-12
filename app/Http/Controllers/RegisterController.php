@@ -24,6 +24,6 @@ class RegisterController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('login.index');
+        return redirect()->route('login');
     }
 }
