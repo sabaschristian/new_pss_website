@@ -32,7 +32,7 @@
                         <p class="px-2 mt-1">{{ $appointments->appointment_date}}</p>
                     </div>
                     <div class="flex justify-end">
-                        <a href="{{ route('home.index') }}" class="p-2 bg-blue-500 uppercase rounded-lg font-medium text-white hover:bg-blue-400">Proceed</a>
+                        <a href="{{ route('home') }}" class="p-2 bg-blue-500 uppercase rounded-lg font-medium text-white hover:bg-blue-400">Proceed</a>
                     </div>
                 </div>
             </div>

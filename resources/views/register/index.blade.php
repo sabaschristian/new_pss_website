@@ -1,7 +1,7 @@
 <x-layout>
     <div class="max-w-md sm:max-w-lg w-full mx-auto my-10 min-h-full bg-white border border-gray-300 shadow-lg rounded-lg">
         <div class="px-6 py-12">
-            <a href="{{ route('home.index') }}" class="flex justify-center">
+            <a href="{{ route('home') }}" class="flex justify-center">
                 <img src="{{ URL('images/pss_logo.jpeg') }}" alt=" Passionist Sisters' School" width="50">
             </a>
             <h1 class="mt-3 text-center text-2xl font-medium">Passionist Sisters' School</h1>

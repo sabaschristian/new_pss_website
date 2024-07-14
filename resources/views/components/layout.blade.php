@@ -21,7 +21,7 @@
     <body class="h-screen w-full flex flex-col sm:w-auto">
         <header class="px-6 py-4 relative shadow-lg">
             <nav class="flex items-center justify-between">
-                    <a class="flex items-center gap-4" href="{{ route('home.index') }}">
+                    <a class="flex items-center gap-4" href="{{ route('home') }}">
                         <img width="50" src="{{ URL('images/pss_logo.jpeg') }}" alt="Passionist Sisters' School">
                         <h1 class="text-3xl hidden md:flex">Passionist Sisters' School</h1>
                     </a>
